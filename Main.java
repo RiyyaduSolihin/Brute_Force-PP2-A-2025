@@ -13,10 +13,10 @@ public class Main {
                 // Inisialisasi MVC
                 PelangganModel model = new PelangganModel();
                 MainView view = new MainView();
-                
+
                 // Menghubungkan View dan Model lewat Controller
                 new PelangganController(model, view);
-                
+
                 // Tampilkan Aplikasi
                 view.setVisible(true);
             } catch (Exception e) {
