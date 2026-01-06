@@ -25,7 +25,7 @@ public class MainView extends JFrame {
     public DefaultTableModel tableModel = new DefaultTableModel(new String[]{"ID", "Nama Pelanggan", "No. Telepon", "Layanan"}, 0);
 
     public MainView() {
-        setTitle("Aplikasi Booking Barber Shop");
+        setTitle("BarberBar");
         setSize(900, 600); // Sedikit diperlebar
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
