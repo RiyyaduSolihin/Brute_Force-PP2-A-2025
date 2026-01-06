@@ -5,16 +5,23 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class KoneksiDB {
-    private static final String URL = "jdbc:mysql://localhost:3306/barbershop_db";
-    private static final String USER = "root";
-    private static final String PASS = "";
+    private static Connection koneksi;
 
-    public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(URL, USER, PASS);
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("Driver MySQL tidak ditemukan", e);
+    public static Connection getKoneksi() {
+        if (koneksi == null) {
+            try {
+                // Ganti password "" dengan password database Anda jika ada
+                String url = "jdbc:mysql://localhost:3306/barber_booking";
+                String user = "root";
+                String password = ""; 
+                
+                // Load Driver (Opsional untuk versi baru, tapi bagus untuk kompatibilitas)
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                koneksi = DriverManager.getConnection(url, user, password);
+            } catch (ClassNotFoundException | SQLException e) {
+                System.err.println("Gagal Koneksi: " + e.getMessage());
+            }
         }
+        return koneksi;
     }
 }
