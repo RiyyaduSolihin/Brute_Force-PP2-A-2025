@@ -56,8 +56,6 @@ public class PelangganModel {
         }
         return list;
     }
-    // File: src/ManajemenBarberShop/model/PelangganModel.java
-
     // FITUR BARU: Filter Data berdasarkan Layanan
     public List<Pelanggan> getPelangganByLayanan(String kategori) throws SQLException {
         List<Pelanggan> list = new ArrayList<>();
