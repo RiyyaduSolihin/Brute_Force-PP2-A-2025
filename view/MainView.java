@@ -6,18 +6,18 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class MainView extends JFrame {
-    // Komponen Input Form
+    // Input Form
     public JTextField txtNama = new JTextField(20);
     public JTextField txtTelepon = new JTextField(20);
     public JComboBox<String> cmbLayanan = new JComboBox<>(new String[]{"Haircut", "Shaving", "Hair Color", "Full Package"});
 
-    // Komponen Tombol
+    // Tombol
     public JButton btnTambah = new JButton("Simpan");
     public JButton btnUbah = new JButton("Update");
     public JButton btnHapus = new JButton("Hapus");
     public JButton btnReset = new JButton("Reset Form");
 
-    // FITUR BARU: Komponen Filter
+    // FITUR Filter
     public JComboBox<String> cmbFilter = new JComboBox<>(new String[]{"Semua Data", "Haircut", "Shaving", "Hair Color", "Full Package"});
 
     // Komponen Tabel
@@ -26,7 +26,7 @@ public class MainView extends JFrame {
 
     public MainView() {
         setTitle("BarberBar");
-        setSize(900, 600); // Sedikit diperlebar
+        setSize(900, 600); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
@@ -38,7 +38,6 @@ public class MainView extends JFrame {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
 
-        // Baris 1-4 (Sama seperti sebelumnya)
         gbc.gridx = 0; gbc.gridy = 0; panelForm.add(new JLabel("Nama Pelanggan:"), gbc);
         gbc.gridx = 1; panelForm.add(txtNama, gbc);
         gbc.gridx = 0; gbc.gridy = 1; panelForm.add(new JLabel("No. Telepon:"), gbc);
@@ -56,14 +55,14 @@ public class MainView extends JFrame {
         // Panel Filter
         JPanel panelFilter = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         panelFilter.add(new JLabel("Layanan: "));
-        panelFilter.add(cmbFilter); // Menambahkan combobox filter
+        panelFilter.add(cmbFilter); 
 
         // Setup Tabel
         table.setModel(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
 
         // Gabungkan Filter dan Tabel
-        panelCenter.add(panelFilter, BorderLayout.NORTH); // Filter ditaruh di atas tabel
+        panelCenter.add(panelFilter, BorderLayout.NORTH); 
         panelCenter.add(scrollPane, BorderLayout.CENTER);
 
         // --- 3. PANEL BAWAH (AKSI) ---
@@ -73,8 +72,8 @@ public class MainView extends JFrame {
         panelBawah.add(btnHapus);
 
         // SUSUN KE FRAME UTAMA
-        add(panelForm, BorderLayout.WEST); // Form pindah ke Kiri agar lebih lega
-        add(panelCenter, BorderLayout.CENTER); // Tabel di tengah
+        add(panelForm, BorderLayout.WEST); 
+        add(panelCenter, BorderLayout.CENTER); 
         add(panelBawah, BorderLayout.SOUTH);
     }
 }

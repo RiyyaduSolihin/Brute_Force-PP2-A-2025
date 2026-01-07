@@ -10,12 +10,12 @@ public class KoneksiDB {
     public static Connection getKoneksi() {
         if (koneksi == null) {
             try {
-                // Ganti password "" dengan password database Anda jika ada
+                
                 String url = "jdbc:mysql://localhost:3306/barber_booking";
                 String user = "root";
                 String password = ""; 
                 
-                // Load Driver (Opsional untuk versi baru, tapi bagus untuk kompatibilitas)
+                // Load Driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 koneksi = DriverManager.getConnection(url, user, password);
             } catch (ClassNotFoundException | SQLException e) {
